@@ -13,12 +13,14 @@ public class LazerGunSetting : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-		
+        gun.init();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        gun.update();
+
         if (operation.whetherShot())
             gun.shot();
 	}

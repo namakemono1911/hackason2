@@ -5,26 +5,23 @@ using UnityEngine;
 [System.Serializable]
 public class LazerGun : gunFacade
 {
-    [SerializeField]
-    private Transform shotTrans;
+    public override void init()
+    {
+        changeState(new LazerGunDefault(this));
+    }
 
-    [SerializeField]
-    private GameObject lazerPrefub;
-
-    [SerializeField]
-    private float speed;
+    public override void update()
+    {
+        state.update();
+    }
 
     public override void reload()
     {
-        gun.remainingBullet = gun.numBullet;
+        state.reload();
     }
 
     public override void shot()
     {
-        var obj = GameObject.Instantiate(lazerPrefub, shotTrans.position, shotTrans.rotation * lazerPrefub.transform.rotation);
-        var body = obj.GetComponent<Rigidbody>();
-        body.velocity = shotTrans.forward * speed;
-
-        gun.remainingBullet--;
+        state.shot();
     }
 }

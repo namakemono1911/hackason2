@@ -22,6 +22,6 @@ public class KeyMouseInput : InputFacade
 
     public override bool whetherShot()
     {
-        return Input.GetKeyDown(keySetting.shotKey);
+        return Input.GetKey(keySetting.shotKey);
     }
 }
