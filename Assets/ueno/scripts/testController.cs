@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract public class shotFacade
+public class testController : MonoBehaviour
 {
-    
+
 }
