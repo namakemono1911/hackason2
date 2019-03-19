@@ -4,5 +4,11 @@ using UnityEngine;
 
 public class testController : MonoBehaviour
 {
+    [SerializeField]
+    private Animation animation;
 
+    private void Start()
+    {
+        
+    }
 }
